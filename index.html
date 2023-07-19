@@ -1,44 +1,62 @@
-<html>
-  <head>
-      <script type="text/javascript" src="https://spotfire.cloud.tibco.com/spotfire/wp/GetJavaScriptApi.ashx?Version=7.5"></script>
-    <script>
-      var c_serverUrl = "tibcospotfire:server:https%3A//spotfire-next.cloud.tibco.com/:analysis:bc914907-b4e6-4ed9-88d1-d974f01331b1";
-      var c_analysis_path = "/Users/ol74mja5bs2h44iafrcig7oxab3n2xw3/Public Folder";
-    
-      var c_parameters = "";
-      var customization = new spotfire.webPlayer.Customization();
-    
-      var app;
-      var c_reloadAnalysisInstance = false;
-    
-      window.onload = function()
-      {
-      app = new spotfire.webPlayer.Application(c_serverUrl, customization, c_analysis_path, c_parameters, c_reloadAnalysisInstance)
-    
-      // Hide UI elements
-      customization.showDodPanel = false;
-      customization.showStatusBar = false;
-      customization.showToolBar = false;
-      customization.showPageNavigation = false;
-      customization.showClose = false;
-      customization.showAnalysisInfo = true;
-      customization.showExportFile = false;
-      customization.showExportVisualization = true;
-      customization.showUndoRedo = true;
-      customization.showFilterPanel = false;
-    
-      var viewOne = app.openDocument{"Dashboard Library", "Embed", customization}
-      }
-    </script>
+<html lang="en">
+<!--
+  Copyright (c) 2019. TIBCO Software Inc.
+  This file is subject to the license terms contained
+  in the license file that is distributed with this file.
+-->
+
+<head>
+  <title>Demo Wrapper for TIBCO Spotfire(R) - Samples</title>
 </head>
 
-  <body>
+<body>
+  <h1>Demo Wrapper for TIBCO Spotfire&trade; - Two dashboards
+    <select onchange="location=this.value" style='float:right'>
+      <option value="index.html">Basic sample with one dashboard</option>
+      <option selected value="two.html">With two dashboards</option>
+      <option value="cust.html">Customize dashboards</option>
+      <option value="filter.html">Set Filter</option>
+      <option value="marking.html">Get Marking</option>
+      <option value="new.html">Attach new dashboard</option>
+    </select>
+  </h1>
 
-    // <div class="header" src="HEF_header.png"></div>
-    <div id="Dashboard Library"></div>
-  </body>
+  <p>Several dashboards can be inserted. Only one <code>script</code> tag needs to be placed after all
+    <code>spotfire-wrapper</code>
+    tags:</p>
 
-  
-  
-  
+  <h2>Code:</h2>
+  <pre style='border:2px dashed green; background-color:black; color:white; padding:20px;'>
+&lt;<span style='color:yellow'>spotfire-viewer</span>
+    url="https://spotfire-next.cloud.tibco.com"
+    path="<span style='color:pink'>Sample Data Functions/MATLAB/MATLAB_Correlation_Cars</span>"&gt;
+    page="<span style='color:pink'></span>The Analysis</span>"
+&lt;/<span style='color:yellow'>spotfire-viewer</span>&gt;
+
+&lt;<span style='color:yellow'>spotfire-editor</span>
+    url="https://spotfire-next.cloud.tibco.com"
+    path="<span style='color:pink'>Samples/Expense Analyzer Dashboard</span>" 
+    page="<span style='color:pink'></span>Expense dashboard</span>"&gt;
+&lt;/<span style='color:yellow'>spotfire-editor</span>&gt;
+
+&lt;<span style='color:yellow'>script</span> src="./spotfire-wrapper.js" &gt;&lt;/<span style='color:yellow'>script</span>&gt;</pre>
+
+  <h2>Result:</h2>
+  <spotfire-viewer 
+    id="id1" 
+    url="https://spotfire-next.cloud.tibco.com"
+    path="Sample Data Functions/MATLAB/MATLAB_Correlation_Cars" 
+    page="The Analysis">
+  </spotfire-viewer>
+  <br><br>
+  <spotfire-editor 
+    url="https://spotfire-next.cloud.tibco.com" 
+    path="Samples/Expense Analyzer Dashboard"
+    page="Expense dashboard">
+  </spotfire-editor>
+
+  <script src="./spotfire-wrapper.js"></script>
+
+</body>
+
 </html>
