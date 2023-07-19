@@ -1,1 +1,43 @@
-"Hello" 
+<html>
+  <head>
+      <script
+      type="text/javascript"
+       src="https://spotfire.cloud.tibco.com/spotfire/wp/GetJavaScriptApi.ashx?Version=7.5""
+      ></script>
+    <script>
+      var c_serverUrl = "https://spotfire-next.cloud.tibco.com/spotfire/wp/";
+      var c_analysis_path = "/Users/Sara Boyle/Public Folder";
+    
+      var c_parameters = "";
+      var customization = new spotfire.webPlayer.Customization();
+    
+      var app;
+      var c_reloadAnalysisInstance = false;
+    
+      window.onload = function()
+      {
+      app = new spotfire.webPlayer.Application(c_serverUrl, customization, c_analysis_path, c_parameters, c_reloadAnalysisInstance)
+    
+      // Hide UI elements
+      customization.showDodPanel = false;
+      customization.showStatusBar = false;
+      customization.showToolBar = false;
+      customization.showPageNavigation = false;
+      customization.showClose = false;
+      customization.showAnalysisInfo = true;
+      customization.showExportFile = false;
+      customization.showExportVisualization = true;
+      customization.showUndoRedo = true;
+      customization.showFilterPanel = false;
+    
+      var viewOne = app.openDocument{"Dashboard Library", "Embed", customization}
+      }
+    </script>
+</head>
+  //analysis link
+//https://spotfire-next.cloud.tibco.com/spotfire/wp/OpenAnalysis?file=bc914907-b4e6-4ed9-88d1-d974f01331b1
+
+  
+  
+  
+</html>
