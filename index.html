@@ -16,7 +16,13 @@
     var parameters = '';
     var reloadInstances = false;
     var apiVersion = "7.14";
-    var customizationInfo;
+    
+    var customizationInfo = {
+        showCustomizableHeader : false,
+        showStatusBar : false,
+        showToolBar : false,
+        showPageNavigation : false
+    };
  
     spotfire.webPlayer.createApplication(
         webPlayerServerRootUrl,
