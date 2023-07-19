@@ -4,14 +4,15 @@
              src="https://spotfire-next.cloud.tibco.com/spotfire/wp/GetJavaScriptApi.ashx?Version=12.5.0">;
      </script>
      <script>
+       window.onload = function() {	
+       var app;
         var serverUrl = "https://spotfire-next.cloud.tibco.com/spotfire/wp/";
         var analysisPath = "/Users/ol74mja5bs2h44iafrcig7oxab3n2xw3/Public%20Folder/Dashboard%20Library";
         var customizationInfo = new spotfire.webPlayer.Customization();
-        window.onload = function() {				
-          var app = new spotfire.webPlayer.Application(serverUrl,
-                                                       customizationInfo,
-                                                       analysisPath);
-          var doc=app.openDocument("container", "RNAseq");
+        var c_reloadAnalysisInstance = false;
+        			
+        app = new spotfire.webPlayer.Application(serverUrl, customizationInfo, analysisPath);
+        var viewOne = app.openDocument("container", "RNAseq", customizationInfo);
         }
      </script>
   </head>
