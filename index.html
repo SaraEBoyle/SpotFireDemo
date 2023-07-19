@@ -3,8 +3,12 @@
       <script type="text/javascript" src="https://spotfire.cloud.tibco.com/spotfire/wp/GetJavaScriptApi.ashx?Version=7.5"></script>
     <script>
 
-      var c_serverUrl = "https://spotfire-next.cloud.tibco.com/spotfire/wp/OpenAnalysis?file=bc914907-b4e6-4ed9-88d1-d974f01331b1";
-      var c_analysis_path = "/Users/ol74mja5bs2h44iafrcig7oxab3n2xw3/Public Folder/Dashboard%20Library";
+
+      page title: RNAseq
+
+      
+      var c_serverUrl = "https://spotfire-next.cloud.tibco.com/spotfire/wp/";
+      var c_analysis_path = "/Users/ol74mja5bs2h44iafrcig7oxab3n2xw3/Public Folder/Dashboard Library";
     
       var c_parameters = "";
       var customization = new spotfire.webPlayer.Customization();
@@ -28,15 +32,14 @@
       customization.showUndoRedo = true;
       customization.showFilterPanel = false;
     
-      var viewOne = app.openDocument{"Dashboard%20Library", "Embed", customization}
+      var viewOne = app.openDocument{"demoViz", "RNAseq", customization}
       }
     </script>
 </head>
 
   <body>
 
-    // <div class="header" src="HEF_header.png"></div>
-    <div id="Dashboard%20Library"></div>
+    <div id="demoViz"></div>
   </body>
 
   
