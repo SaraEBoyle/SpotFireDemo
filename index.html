@@ -4,15 +4,9 @@
              src="https://spotfire-next.cloud.tibco.com/spotfire/wp/GetJavaScriptApi.ashx?Version=12.5.0">;
      </script>
      <script>
-        var serverUrl = "https://spotfire-next.cloud.tibco.com/spotfire/wp/"";
-        var analysisPath = "/Users/ol74mja5bs2h44iafrcig7oxab3n2xw3/Public%20Folder/Dashboard%20Library/";
+        var serverUrl = "https://spotfire-next.cloud.tibco.com/spotfire/wp/";
+        var analysisPath = "/Users/ol74mja5bs2h44iafrcig7oxab3n2xw3/Public%20Folder/Dashboard%20Library&configurationBlock=SetPage%28pageIndex%3D0%29%3B&options=13-1,10-0,9-1,5-0,6-0,17-0,11-0,12-0,14-0,1-0,3-0,18-0,7-0,15-0,19-0,4-0,2-0";
         var customizationInfo = new spotfire.webPlayer.Customization();
-        var customizationInfo = {
-            showCustomizableHeader : false,
-            showStatusBar : false,
-            showToolBar : false,
-            showPageNavigation : false
-        }
         window.onload = function() {				
           var app = new spotfire.webPlayer.Application(serverUrl,
                                                        customizationInfo,
