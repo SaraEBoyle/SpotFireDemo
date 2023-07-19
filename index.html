@@ -1,13 +1,18 @@
 <html> 
   <head>
      <script type="text/javascript"
-             src="https://spotfire-next.cloud.tibco.com/spotfire/wp/GetJavaScriptApi.ashx?Version=7.5">;
+             src="https://spotfire-next.cloud.tibco.com/spotfire/wp/GetJavaScriptApi.ashx?Version=12.5.0">;
      </script>
      <script>
         var serverUrl = "https://spotfire-next.cloud.tibco.com/spotfire/wp/"";
         var analysisPath = "/Users/ol74mja5bs2h44iafrcig7oxab3n2xw3/Public%20Folder/Dashboard%20Library/";
         var customizationInfo = new spotfire.webPlayer.Customization();
-
+        var customizationInfo = {
+            showCustomizableHeader : false,
+            showStatusBar : false,
+            showToolBar : false,
+            showPageNavigation : false
+        }
         window.onload = function() {				
           var app = new spotfire.webPlayer.Application(serverUrl,
                                                        customizationInfo,
