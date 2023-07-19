@@ -17,23 +17,27 @@
     var reloadInstances = true;
     var apiVersion = "7.14";
     
-    var customizationInfo = {
-        showCustomizableHeader : false,
-        showStatusBar : false,
-        showToolBar : false,
-        showPageNavigation : false
-    };
- 
-    spotfire.webPlayer.createApplication(
-        webPlayerServerRootUrl,
-        customizationInfo,
-        analysisPath,
-        parameters,
-        reloadInstances,
-        apiVersion,
-        onReadyCallback,
-        onCreateLoginElement 
-        );
+    var customizationInfo = new Customization();
+    customizationInfo.showCustomizableHeader : false,
+    customizationInfo.showAbout = false;
+    customizationInfo.showAnalysisInformationTool = false;
+    customizationInfo.showAuthor = false;
+    customizationInfo.showClose = false;
+    customizationInfo.showCustomizableHeader = false;
+    customizationInfo.showDodPanel = false;
+    customizationInfo.showExportFile = false;
+    customizationInfo.showExportVisualization = false;
+    customizationInfo.showFilterPanel = false;
+    customizationInfo.showHelp = false;
+    customizationInfo.showLogout = false;
+    customizationInfo.showPageNavigation = false;
+    customizationInfo.showReloadAnalysis = false;
+    customizationInfo.showStatusBar = false;
+    customizationInfo.showToolBar = false;
+    customizationInfo.showUndoRedo = false;
+    
+    var app = new spotfire.webPlayer.Application(webPlayerServerRootUrl, customizationInfo, analysisPath);
+    var doc1 = app.openDocument("container", 0);
  
     function onReadyCallback(response, newApp)
     {
